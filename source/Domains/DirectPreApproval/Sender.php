@@ -65,7 +65,7 @@ class Sender
      *
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
@@ -77,7 +77,7 @@ class Sender
      *
      * @return $this
      */
-    public function setEmail($email)
+    public function setEmail($email): self
     {
         $this->email = $email;
 
@@ -89,7 +89,7 @@ class Sender
      *
      * @return $this
      */
-    public function setIp($ip)
+    public function setIp($ip): self
     {
         $this->ip = $ip;
 
@@ -101,7 +101,7 @@ class Sender
      *
      * @return $this
      */
-    public function setHash($hash)
+    public function setHash($hash): self
     {
         $this->hash = $hash;
 
@@ -111,7 +111,7 @@ class Sender
     /**
      * @return Phone
      */
-    public function setPhone()
+    public function setPhone(): Phone
     {
         $this->phone = new Phone();
 
@@ -123,7 +123,7 @@ class Sender
      *
      * @return $this
      */
-    public function setDocuments(Document $document)
+    public function setDocuments(Document $document): self
     {
         $this->documents[] = $document;
 
@@ -133,7 +133,7 @@ class Sender
     /**
      * @return Address
      */
-    public function setAddress()
+    public function setAddress(): Address
     {
         $this->address = new Address();
 

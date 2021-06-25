@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Tests;
+namespace PagSeguro\Tests\Domains\DirectPreApproval;
 
 use PHPUnit\Framework\TestCase;
 use PagSeguro\Domains\DirectPreApproval\Phone;
@@ -9,7 +9,7 @@ class PhoneTest extends TestCase
 {
     private $obj;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->obj = new Phone();
     }

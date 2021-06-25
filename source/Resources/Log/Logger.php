@@ -24,6 +24,7 @@
 
 namespace PagSeguro\Resources\Log;
 
+use Exception;
 use PagSeguro\Configuration\Configure;
 use PagSeguro\Enum\Log\Level;
 
@@ -41,7 +42,7 @@ class Logger implements LoggerInterface
      * @param string $message
      * @param array $context
      * @return void|null
-     * @throws \Exception
+     * @throws Exception
      */
     public static function emergency($message, array $context = array())
     {
@@ -61,7 +62,7 @@ class Logger implements LoggerInterface
      * @param string $message
      * @param array $context
      * @return void|null
-     * @throws \Exception
+     * @throws Exception
      */
     public static function alert($message, array $context = array())
     {
@@ -72,6 +73,7 @@ class Logger implements LoggerInterface
      * Critical conditions.
      *
      * Example: Application component unavailable, unexpected exception.
+     * @throws Exception
      */
     public static function critical($message, array $context = array())
     {
@@ -81,6 +83,7 @@ class Logger implements LoggerInterface
     /**
      * Runtime errors that do not require immediate action but should typically
      * be logged and monitored.
+     * @throws Exception
      */
     public static function error($message, array $context = array())
     {
@@ -92,6 +95,7 @@ class Logger implements LoggerInterface
      *
      * Example: Use of deprecated APIs, poor use of an API, undesirable things
      * that are not necessarily wrong.
+     * @throws Exception
      */
     public static function warning($message, array $context = array())
     {
@@ -103,7 +107,7 @@ class Logger implements LoggerInterface
      * @param string $message
      * @param array $context
      * @return void|null
-     * @throws \Exception
+     * @throws Exception
      */
     public static function notice($message, array $context = array())
     {
@@ -117,7 +121,7 @@ class Logger implements LoggerInterface
      * @param string $message
      * @param array $context
      * @return void|null
-     * @throws \Exception
+     * @throws Exception
      */
     public static function info($message, array $context = array())
     {
@@ -129,7 +133,7 @@ class Logger implements LoggerInterface
      * @param string $message
      * @param array $context
      * @return void|null
-     * @throws \Exception
+     * @throws Exception
      */
     public static function debug($message, array $context = array())
     {
@@ -141,7 +145,7 @@ class Logger implements LoggerInterface
      * @param string $message
      * @param array $context
      * @return bool
-     * @throws \Exception
+     * @throws Exception
      */
     public static function log($level, $message, array $context = array())
     {
@@ -152,7 +156,7 @@ class Logger implements LoggerInterface
 
         try {
             self::write(self::location(), self::message($level, $message, $context));
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw $exception;
         }
     }
@@ -163,7 +167,7 @@ class Logger implements LoggerInterface
      * @param $message
      * @param array $context
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     private static function message($level, $message, array $context = array())
     {

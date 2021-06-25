@@ -1,5 +1,5 @@
 {
-  "name": "uol-pagseguro-moscou/pagseguro-php-sdk",
+  "name": "pagseguro/pagseguro-php-sdk",
   "description": "Biblioteca de integração com o PagSeguro",
   "license": "Apache-2.0",
   "authors": [
@@ -8,13 +8,13 @@
     }
   ],
   "require": {
-    "php": "^7.1.3",
+    "php": "^7.1.3|^8.0",
     "ext-curl": "*",
     "lib-curl": "*",
     "lib-openssl": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.0"
+    "phpunit/phpunit": "^7.0|^9.0"
   },
   "autoload": {
     "psr-4": {
@@ -24,6 +24,14 @@
   "autoload-dev": {
     "psr-4": {
       "PagSeguro\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "7.0.0-dev"
     }
   }
 }
